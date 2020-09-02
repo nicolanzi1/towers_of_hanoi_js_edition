@@ -40,7 +40,7 @@ class Game {
         reader.question("Enter a starting tower: ", start => {
             const startTowerIdx = parseInt(start);
             reader.question("Enter an ending tower: ", end => {
-                const endTowerIdx = parseInd(end);
+                const endTowerIdx = parseInt(end);
                 callback(startTowerIdx, endTowerIdx);
             });
         });
@@ -52,7 +52,7 @@ class Game {
                 console.log("Invalid move!");
             }
 
-            if (!isWon()) {
+            if (!this.isWon()) {
                 this.run(reader, gameCompletionCallback);
             } else {
                 console.log("You win!");
